@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roche : Yaali</title>
+    <link rel="icon" href="../static/assets/roche-logo.jpeg">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidebar">
+            <div class="yaali " >
+                <img src="../static/assets/yaali_animal.png" alt="yaali_animal">
+                <a href="https://drive.google.com/file/d/15T68XeTxSJ68qm0D75wSEj09H7Rdt_tQ/view">About Yaali</a>
+                <h2>KOL Identification Tool</h2>
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content">
+            <div class="sticky-nav">
+                <img src="../static/assets/final.png" alt="roche-logo" >
+            </div>
+
+            <div class="data-container">
+                <div class="box">
+                    <div class="dropDown">
+                        <label for="market-select">Market of Interest : </label>
+                        <select name="market-select" id="market-select" >
+                            <option value="" >Select market</option>
+                            <option value="GASTRO">GASTRO</option>
+                            <option value="LUPUS">LUPUS</option>
+                        </select>
+                    </div>
+                    
+                    <div class="dropDown">
+                        <label for="drug-select">Drugs of Interest : </label>
+                        <select name="drug-select" id="drug-select" multiple size="2">
+                            <option value="" disabled>Select drugs</option>
+                        </select>
+                        <button id="submit-btn" style="background-color: rgba(2,70,143,.9) ">Filter</button> 
+                    </div>
+                </div>
+                <div id="loading-spinner" style="display:none;">
+                    <div class="spinner"></div>
+                </div>
+                
+                <div id="table-section">
+                    <!-- If want to show h2 tag then appenchild to table-section in js -->
+                    <table id="data-table">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div id="graph-section" >
+                    <!-- Graph will be dynamically appended here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/app1.js"></script>
+</body>
+
+</html>

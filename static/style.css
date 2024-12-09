@@ -1,0 +1,225 @@
+body{
+    
+    margin: 0;
+    background-color: white;
+    color: white;
+    overflow: hidden;
+}
+
+.main{
+    display: flex;
+    height: 100vh;
+    padding: .5rem;
+}
+
+.sidebar {
+    background-color: rgba(2,70,143,.9);
+    width: 30%;
+    margin-right: 1.5rem;
+    border-radius: 0 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 1);
+}
+
+.yaali {
+    background-color: rgba(121,180,233,.2);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: fit-content; /* Ensures the div takes full height for centering */
+    text-align: center; /* Centers text inside the div */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 1);
+}
+
+.yaali img {
+    display: block;
+    margin: 0 auto; /* Horizontally center the image */
+    max-width: 80%; /* Ensures the image resizes for small screens */
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.yaali a {
+    text-decoration:none;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block; /* Keeps proper alignment for text */
+}
+
+.main-content{
+    color: black;
+    background-color: white;
+    flex: 1;
+    border-radius: 1rem;
+    overflow: scroll;
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+.sticky-nav{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    width: 100%;
+    height: 6rem;
+    top: 0;
+    display: flex;
+    z-index: 25;
+    background-color: white;
+}
+
+.data-container{
+    padding-top:4rem ;
+}
+.box{
+    border: 1px solid black;
+    background-color:white;
+    border-radius: 1rem;
+    box-shadow:0 4px 10px rgba(2,70,143,.9);
+}
+#submit-btn{
+    padding: .25rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+    color: white;
+    margin: 1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+}
+.dropDown{
+    margin:5rem 5rem;
+    display: inline-block;
+}
+.dropDown label{
+    font-size: 1.15rem;
+    
+}
+#graph-section{
+    margin-top: 2rem;
+    color: black;
+    width: 100%;
+    height: 30rem;
+    margin-top: 2.5rem;
+    overflow: scroll;
+    border: 1px solid black;
+    background-color:white;
+    border-radius: 1rem;
+    box-shadow:0 4px 10px rgba(2,70,143,.9);
+    display: none;
+}
+#table-section{
+    color: black;
+    width: 100%;
+    height: 30rem;
+    margin-top: 2.5rem;
+    overflow: scroll;
+    border: 1px solid black;
+    background-color:white;
+    border-radius: 1rem;
+    box-shadow:0 4px 10px rgba(2,70,143,.9);
+    display: none;/* table will be shown only when filter is clicked until then this box will be hidden */
+    border-collapse: collapse;
+}
+
+select{
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+}
+/* General table styling */
+/* table {
+    width: 100%;
+   
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} */
+
+/* Table header styling */
+
+#data-table thead tr {
+    background-color: #02468f;
+    color: white;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+th {
+    background-color: rgba(2,70,143,.9); /* Green background for header */
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Table data cell styling */
+td {
+    border: 1px solid #ddd; /* Light gray border for cells */
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Zebra striping effect for rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+/* Highlight row on hover */
+tr:hover {
+    background-color: #ddd; /* Slight gray background when hovering over a row */
+}
+
+/* Border around the entire table */
+table, th, td {
+    border: 1px solid #ddd; /* Adds border around table and cells */
+}
+
+/* Ensuring that long text is wrapped properly within cells */
+td {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+@media (max-width: 720px) {
+    .sidebar {
+        display: none; /* Hides the sidebar */
+    }
+
+    .main-content {
+        width: 100%; /* Ensures the main content takes the full width */
+    }
+}
+
+#loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.spinner {
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top: 6px solid rgba(2, 70, 143, 0.9); /* Customize color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
