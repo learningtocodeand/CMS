@@ -93,6 +93,17 @@ body{
     font-size: 1rem;
     border-radius: .5rem;
 }
+#export-btn{
+    background-color: rgba(2,70,143,.9);
+    padding: .25rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+    color: white;
+    margin: 1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    /*initially will not be dislplayed*/
+    display:none;
+}
 .dropDown{
     margin:5rem 5rem;
     display: inline-block;

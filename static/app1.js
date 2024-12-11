@@ -5,6 +5,7 @@ const tableSection = document.getElementById("table-section");
 const tableHead = document.querySelector("#data-table thead tr")
 const tableBody = document.querySelector("#data-table tbody")
 const graphSection = document.getElementById("graph-section");
+const exportBtn = document.getElementById("export-btn");
 
 const API_BASE = "http://127.0.0.1:8000";//Backend API
 //data for the second drop down menu
@@ -72,6 +73,7 @@ submitBtn.addEventListener("click", async () => {
         } else {
             console.warn("No data to display in the table.");
             tableSection.style.display = 'none'; // Hide the table if no data
+            exportBtn.style.display= "none";
         }
 
         // Fetch and display graphs
@@ -90,7 +92,11 @@ function renderTable(data) {
     tableBody.innerHTML = "";
 
     if (data.length > 0) {
+        console.log(exportBtn);
+        exportBtn.style.display="block";
         tableSection.style.display = "block";//make the table visible
+        console.log(exportBtn.style.display);
+        
 
         //Generate table headers dynamically
         const headers = Object.keys(data[0]);// Get column names from the first row
@@ -115,6 +121,7 @@ function renderTable(data) {
     }
     else {
         tableSection.style.display = 'none';
+        exportBtn.style.display="none";
     }
 
 }
