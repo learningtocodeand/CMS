@@ -92,10 +92,10 @@ function renderTable(data) {
     tableBody.innerHTML = "";
 
     if (data.length > 0) {
-        console.log(exportBtn);
+        //console.log(exportBtn);
         exportBtn.style.display="block";
         tableSection.style.display = "block";//make the table visible
-        console.log(exportBtn.style.display);
+        //console.log(exportBtn.style.display);
         
 
         //Generate table headers dynamically
@@ -167,3 +167,30 @@ async function fetchAndDisplayGraphs(filterData) {
         loadingSpinner.style.display = "none";
     }
 }
+
+// Function to export table data to CSV
+
+exportBtn.addEventListener('click',()=> {
+    filename = 'table_data.csv';
+    console.log("button click hua export wala");
+    const rows = [];
+    // Get table headers
+    const headers = Array.from(tableHead.querySelectorAll('th')).map(th => th.textContent);
+    rows.push(headers);
+
+    // Get table body rows
+    tableBody.querySelectorAll('tr').forEach(tr => {
+        const row = Array.from(tr.querySelectorAll('td')).map(td => td.textContent);
+        rows.push(row);
+    });
+
+    // Convert to CSV
+    const csvContent = rows.map(row => row.join(',')).join('\n');
+
+    // Create a Blob and trigger download
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+});
